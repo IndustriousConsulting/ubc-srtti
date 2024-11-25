@@ -13,7 +13,7 @@
   },
   "scripts" : {
     "clone_srtti": "git clone https://github.com/sandraros/S-RTTI.git input/srtti",
-    "rename": "abaplint abaplint_rename.json --rename && sh assets/additional_rename.sh rm -rf src/srtti/* && cp -r output/input/srtti/src/** src/ && rm -rf output && rm -rf input && rm -rf node_modules",
+    "rename": "abaplint abaplint_rename.json --rename && sh assets/additional_rename.sh && rm -rf src/srtti/* && cp -r output/input/srtti/src/** src/ && rm -rf output && rm -rf input && rm -rf node_modules",
     "cleanup": "rm -rf input && rm -rf output && rm -rf src/*",
     "init": "npm run cleanup && rm -rf output && npm run clone_srtti",
     "mirror": "npm run rename && npm run cleanup",
