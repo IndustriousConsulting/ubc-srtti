@@ -1,0 +1,36 @@
+{
+  "global": {
+    "files": "/input/**/src/**/*.*"
+  },
+  "rename": {
+    "output": "output",
+    "patterns": [
+      {
+        "type": "CLAS|INTF|TABL",
+        "oldName": "Z(.?.?)_SRTTI_(.*)",
+        "newName": "/UBC/$1_SRTTI_$2"
+      }
+    ]
+  },
+  "syntax": {
+    "version": "v751",
+    "errorNamespace": "."
+  },
+  "rules": {
+    "allowed_object_types": {
+      "allowed": ["CLAS", "DEVC", "INTF", "TABL"]
+    },
+    "allowed_object_naming": false,
+    "begin_end_names": false,
+    "check_ddic": false,
+    "check_include": false,
+    "check_syntax": false,
+    "global_class": false,
+    "implement_methods": false,
+    "method_implemented_twice": false,
+    "parser_error": false,
+    "superclass_final": false,
+    "unknown_types": false,
+    "xml_consistency": false
+  }
+}

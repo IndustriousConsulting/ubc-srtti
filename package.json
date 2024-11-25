@@ -1,0 +1,22 @@
+{
+  "name": "demo_rename",
+  "version": "1.0.0",
+  "description": "Example Renaming Magic",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IndustriousConsulting/ubc-s-rtti.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/IndustriousConsulting/ubc-s-rtti.git#readme",
+  "dependencies": {
+    "@abaplint/cli": "^2.113.21"
+  },
+  "scripts" : {
+    "clone_srtti": "git clone https://github.com/sandraros/S-RTTI.git input/srtti",
+    "rename": "abaplint abaplint_rename.json --rename && sh assets/additional_rename.sh rm -rf src/srtti/* && cp -r output/input/srtti/src/** src/ && rm -rf output && rm -rf input && rm -rf node_modules",
+    "cleanup": "rm -rf input && rm -rf output && rm -rf src/*",
+    "init": "npm run cleanup && rm -rf output && npm run clone_srtti",
+    "mirror": "npm run rename && npm run cleanup",
+    "main" : "npm ci && npm run rename"
+  }
+}
