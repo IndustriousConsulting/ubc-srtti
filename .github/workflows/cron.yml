@@ -19,6 +19,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '16'
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.8 #install the python needed
     - name: run
       run: |
         npm run init
